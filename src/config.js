@@ -13,11 +13,12 @@ const DB_HOST = process.env.POSTGRES_HOST || "localhost";
 const DB_NAME = process.env.POSTGRES_DATABASE || "weather";
 const DB_PORT = process.env.DB_PORT || 5432;
 const DB_URL = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
-
+const DATABASE_URL = process.env.DATABASE_URL
 
 module.exports = {
   PORT,
   NODE_ENV,
   LOCALHOST,
   DB_URL,
+  DATABASE_URL
 };

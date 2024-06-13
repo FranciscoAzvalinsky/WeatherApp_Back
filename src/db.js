@@ -8,9 +8,9 @@ const {
     DB_USER, DB_PASSWORD, DB_HOST, DDB
   } = process.env;
 
-const { DB_URL } = require("./config.js");
+const { DB_URL, DATABASE_URL } = require("./config.js");
   
-  const sequelize = new Sequelize(`${DB_URL}`, {
+  const sequelize = new Sequelize(`${DATABASE_URL}`, {
   logging: false,
   native: false,
   dialectModule: pg,
