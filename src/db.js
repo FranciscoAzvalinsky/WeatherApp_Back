@@ -19,7 +19,10 @@ const { DB_URL, DATABASE_URL } = require("./config.js");
   //        |
   //        V
   dialectOptions: {
-    ssl: true
+    ssl: {
+      require: true,
+      rejectUnauthorized: true // Esto asegura que solo se acepten certificados válidos
+    }
   }
 });
 const basename = path.basename(__filename);
