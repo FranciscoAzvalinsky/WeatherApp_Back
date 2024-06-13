@@ -46,11 +46,9 @@ const capsEntries = entries.map((entry) => [
 sequelize.models = Object.fromEntries(capsEntries);
 
 const {
-    User,
     Province
 } = sequelize.models
 
-Province.belongsToMany(User, {through: 'user_provinces'});
 
 module.exports = {
     ...sequelize.models,
