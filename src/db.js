@@ -2,14 +2,25 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
+const pg = require('pg');
 
 const {
     DB_USER, DB_PASSWORD, DB_HOST, DDB
   } = process.env;
+
+const { DB_URL } = require("./config.js");
   
-  const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DDB}`, {
+  const sequelize = new Sequelize(`${DB_URL}`, {
   logging: false,
   native: false,
+  dialectModule: pg,
+  //Comentar esto para ejecucion local
+  //        |
+  //        |
+  //        V
+  dialectOptions: {
+    ssl: true
+  }
 });
 const basename = path.basename(__filename);
 const modelDefiners = [];

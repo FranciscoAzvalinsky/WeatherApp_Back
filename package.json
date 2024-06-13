@@ -18,7 +18,9 @@
     "pg": "^8.5.1",
     "sequelize": "^6.3.5",
     "nodemon": "^3.0.1",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "@vercel/postgres": "0.8.0",
+    "retry-as-promised": "^7.0.4"
   },
   "author": "Francisco Azvalinsky",
   "license": "ISC"
