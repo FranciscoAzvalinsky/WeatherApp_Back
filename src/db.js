@@ -21,7 +21,7 @@ const { DB_URL, DATABASE_URL } = require("./config.js");
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: true // Esto asegura que solo se acepten certificados válidos
+      rejectUnauthorized: false // Esto asegura que solo se acepten certificados válidos
     }
   }
 });
